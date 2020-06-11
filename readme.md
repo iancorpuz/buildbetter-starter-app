@@ -37,9 +37,8 @@ This app uses [Realm DB](https://realm.io/docs/javascript/latest/)
 To add new database entities, follow these steps:
 
 - [ ] Add the following files to the `src/modules/<module name>/database` directory
-  - [ ] Add schema name to the `src/modules/<module name>/database/constants.js` file
-  - [ ] Schema file `./<entity name>Schema.js` (e.g. `src/modues/Content/database/ContentSchema.js`)
-  - [ ] Model file `./<entity name>Model.js` (e.g. `src/modues/Content/database/ContentSchema.js`) see [Realm Docs](https://realm.io/docs/javascript/latest/#models)
+  - [ ] Add model name to the `src/modules/<module name>/database/constants.js` file
+  - [ ] Model file `./<entity name>Model.js` (e.g. `src/modues/Content/database/ContentModel.js`) see [Realm Docs](https://realm.io/docs/javascript/latest/#models) and [Realm ORM](https://github.com/artis-auxilium/realm-orm) for reference
 - [ ] Register the entity schema at `src/database/schemas.js`
 - [ ] If the database schema structure was updated, increment `SCHEMA_VERSION` at `src/database/schemas.js`
 

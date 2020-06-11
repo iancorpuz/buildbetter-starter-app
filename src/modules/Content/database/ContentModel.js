@@ -1,9 +1,22 @@
-import { uuid } from '../../../utils';
+import Model from 'realm-orm/Model';
 
-export default {
-  id: uuid(),
-  title: null,
-  slug: null,
-  body: null,
-  createdAt: new Date(),
-};
+import { MODELS } from './constants';
+
+export default class ContentModel extends Model {
+  static schema = {
+    name: MODELS.CONTENT,
+    primaryKey: 'id',
+    properties: {
+      id: {
+        type: 'string',
+        length: 36,
+      },
+      title: 'string',
+      slug: 'string',
+      body: 'string',
+      createdAt: 'date',
+    },
+  };
+
+  static stringFields = ['title', 'slug'];
+}

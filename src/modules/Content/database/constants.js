@@ -1,3 +1,3 @@
-export const CONSTANTS = {
+export const MODELS = {
   CONTENT: 'Content',
 };
