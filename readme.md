@@ -42,3 +42,15 @@ To add new database entities, follow these steps:
   - [ ] Model file `./<entity name>Model.js` (e.g. `src/modues/Content/database/ContentSchema.js`) see [Realm Docs](https://realm.io/docs/javascript/latest/#models)
 - [ ] Register the entity schema at `src/database/schemas.js`
 - [ ] If the database schema structure was updated, increment `SCHEMA_VERSION` at `src/database/schemas.js`
+
+To read the Realm database, use the following
+
+```js
+import { withRealm } from 'realm';
+
+class YourComponent {
+  ...
+}
+
+export default withRealm(YourComponent);
+```
