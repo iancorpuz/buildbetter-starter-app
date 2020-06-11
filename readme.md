@@ -25,7 +25,32 @@ Initialize Gitflow
 
 This app uses [React Navigation](https://reactnavigation.org/docs/getting-started).
 
-To add a new screen follow these steps:
+To add a new screen, follow these steps:
 
-- [ ] add the main screen file on the `src/modules/<module name>/<screen name>.js` file. (e.g. `src/auth/Landing/LandingScreen.js`)
-- [ ] register the screen at `src/navigation/<PublicScreens/AuthenticatedScreens>.js` file.
+- [ ] Add the main screen file on the `src/modules/<module name>/<screen name>.js` file. (e.g. `src/auth/Landing/LandingScreen.js`)
+- [ ] Register the screen at `src/navigation/<PublicScreens/AuthenticatedScreens>.js` file.
+
+### Local Database
+
+This app uses [Realm DB](https://realm.io/docs/javascript/latest/)
+
+To add new database entities, follow these steps:
+
+- [ ] Add the following files to the `src/modules/<module name>/database` directory
+  - [ ] Add schema name to the `src/modules/<module name>/database/constants.js` file
+  - [ ] Schema file `./<entity name>Schema.js` (e.g. `src/modues/Content/database/ContentSchema.js`)
+  - [ ] Model file `./<entity name>Model.js` (e.g. `src/modues/Content/database/ContentSchema.js`) see [Realm Docs](https://realm.io/docs/javascript/latest/#models)
+- [ ] Register the entity schema at `src/database/schemas.js`
+- [ ] If the database schema structure was updated, increment `SCHEMA_VERSION` at `src/database/schemas.js`
+
+To read the Realm database, use the following
+
+```js
+import { withRealm } from 'realm';
+
+class YourComponent {
+  ...
+}
+
+export default withRealm(YourComponent);
+```
